@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @artist.age %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @artist.title %>
+</p>
+
+<p>
+  <strong>Instruments Played:</strong>
+  <ul> 
+  <% @artist.instruments.each do |i| %>
+  <li> <%= link_to i.name, instrument_path(i) %></li>
+  <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %> |
+<%= button_to 'Delete', @artist, method: :delete %>
