@@ -20,7 +20,7 @@ class SongsController < ApplicationController
     def create
         @song = Song.create(song_params)
         if @song.valid? 
-            redirect_to song_path(@song)
+            redirect_to artists_path 
         else 
             Flash[:errors] = @song.errors.full_messages 
             redirect_to new_song_path 
@@ -47,7 +47,7 @@ class SongsController < ApplicationController
         params.require(:song).permit(:artist_id, :instrument_id)
     end 
 
-    def set_artist 
+    def set_song
         @song = Song.find(params[:id])
     end 
 end

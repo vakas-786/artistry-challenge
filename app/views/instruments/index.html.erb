@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instruments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Classification</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instruments.each do |instrum| %>
+      <tr>
+        <td><%= instrum.name %></td>
+        <td><%= instrum.classification %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
